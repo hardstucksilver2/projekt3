@@ -1,53 +1,26 @@
+const startButton = document.getElementById("startButton");
+const point = document.getElementById("point");
+let gameInterval;
 
-/*const kuulin = (item1, item2) => {
+startButton.onclick = () => {
+    movePoint(button, getRandomNumber(50,400), getRandomNumber(50,400));
+  hideElement(startButton);
+  startGameInterval(point);
+};
+const movePoint = (element, x, y) => {
+  element.style.top = `${y}px`;
+  element.style.left = `${x}px`;
+};
+const getRandomNumber = (minimum, maximum) =>
+  Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
 
-    console.log("Prinesl jsem " +item1+ " a "+item2);
+const hideElement = (element) => {
+  element.style.display = "none";
+};
 
-}
-
-//                   parametr
-function kulin(item){
-console.log("Prinesl jsem " + item);
-
-}
-
-
-
-
-kulin("michala")
-kuulin("mateje","mys")*/
-/*const sub= (a,b) => {
-
-    console.log(a - b);
-
-
-}
-
-sub(7,8)
-
-function sum(a, b, c, d, e, f){
-
-    console.log (a + b + c + d + e + f)
-}
-
-sum(1, 2, 3, 4, 5, 6)
-
-const greetings= (jmeno1,jmeno2, jmeno3, jmeno4) => {
-
-    console.log("Hello " + jmeno1 + ", Hello " + jmeno2+ ", Hello " + jmeno3 + ", Hello " +jmeno4);
-    console.log(`Hello ${jmeno1}, hello ${jmeno2}, hello ${jmeno3}, hello ${jmeno4}`)
-
-}
-greetings("paja" , "Matej" , "Misa " , "matej")
-
-*/
-let person= "Radek"
-let age= 43;
-
-function getSentence (person, age){
-    return `Tvoje jm0no je ${a} a je ti ${b}`
-}
-const createSentence= (a, b) => `Tvoje jm0no je ${a} a je ti ${b}`;
-
-
-console.log(createSentence(person, age))
+const startGameInterval = () => {
+  clearInterval(gameInterval);
+  gameInterval = setInterval(() => {
+    movePoint(element, getRandomNumber(50, 400), getRandomNumber(50, 400));
+  }, 550);
+};
