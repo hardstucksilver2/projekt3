@@ -3,7 +3,7 @@ const point = document.getElementById("point");
 let gameInterval;
 
 startButton.onclick = () => {
-    movePoint(button, getRandomNumber(50,400), getRandomNumber(50,400));
+  
   hideElement(startButton);
   startGameInterval(point);
 };
@@ -21,6 +21,6 @@ const hideElement = (element) => {
 const startGameInterval = () => {
   clearInterval(gameInterval);
   gameInterval = setInterval(() => {
-    movePoint(element, getRandomNumber(50, 400), getRandomNumber(50, 400));
+    movePoint(point, getRandomNumber(50, 400), getRandomNumber(50, 400));
   }, 550);
 };
