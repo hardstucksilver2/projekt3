@@ -16,7 +16,7 @@ console.log("Prinesl jsem " + item);
 
 kulin("michala")
 kuulin("mateje","mys")*/
-const sub= (a,b) => {
+/*const sub= (a,b) => {
 
     console.log(a - b);
 
@@ -39,3 +39,15 @@ const greetings= (jmeno1,jmeno2, jmeno3, jmeno4) => {
 
 }
 greetings("paja" , "Matej" , "Misa " , "matej")
+
+*/
+let person= "Radek"
+let age= 43;
+
+function getSentence (person, age){
+    return `Tvoje jm0no je ${a} a je ti ${b}`
+}
+const createSentence= (a, b) => `Tvoje jm0no je ${a} a je ti ${b}`;
+
+
+console.log(createSentence(person, age))
